@@ -7,15 +7,12 @@ Test Teardown    Teardown
 
 *** Test Cases ***
 
-# CT001 - Cadastrar novo produto
-#   Dado que o usuário acessa a página de cadastro de produto
-#   Quando o usuário preenche a descrição com "Produto A"
-#   E o usuário preenche a quantidade em estoque com "100"
-#   E o usuário preenche o valor unitário com "10.50"
-#   E o usuário clica no botão "Cadastrar"
-#   Então o sistema exibe a mensagem "Produto cadastrado com sucesso"
-#   E o produto "Produto A" está listado no inventário
-
+CT001 - Cadastrar novo produto
+  Dado que o usuário acessa a página de cadastro de produto
+  Quando o usuário preenche as informações do produto
+  E o usuário clica no botão "Salvar"
+  Então o produto está listado no inventário
+  
 # CT002 - Tentar cadastrar produto com estoque negativo
 #   Dado que o usuário acessa a página de cadastro de produto
 #   Quando o usuário preenche a descrição com "Produto B"
