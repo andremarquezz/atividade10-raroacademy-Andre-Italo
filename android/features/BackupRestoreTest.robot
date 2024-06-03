@@ -7,11 +7,11 @@ Test Teardown    Teardown
 
 *** Test Cases ***
 
-# CT001 - Realizar backup dos dados do sistema
-#   Dado que o usuário acessa a página de manutenção
-#   Quando o usuário clica no botão "Backup"
-#   Então o sistema gera um arquivo de backup na pasta "Estoque"
-#   E o sistema exibe a mensagem "Backup realizado com sucesso"
+CT001 - Realizar backup dos dados do sistema
+  Dado que existem produtos cadastrados
+  Quando o usuário acessa o menu 
+  E clica no botão "Backup" e gera um arquivo de backup
+  Então o sistema exibe a mensagem que o backup foi realizado com sucesso
 
 # CT002 - Restaurar backup dos dados do sistema
 #   Dado que o usuário acessa a página de manutenção
