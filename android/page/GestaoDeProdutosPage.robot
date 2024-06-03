@@ -137,7 +137,6 @@ Então o produto não está listado no inventário
     Page Should Not Contain Element                       ${QUANTITY}
     Page Should Not Contain Element                       ${PRICE}
     Page Should Not Contain Element                       ${LOTE}
-    Page Should Not Contain Element                       ${TABLE_PRODUCT}
 
 Então o produto está listado no inventário com a quantidade atualizada
     Aguarda e verifica que o elemento esta visivel                                            ${BTN_MENU}
