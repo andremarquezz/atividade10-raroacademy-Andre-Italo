@@ -6,33 +6,47 @@ Test Setup    Abrir App
 Test Teardown    Teardown
 
 *** Test Cases ***
-
 CT001 - Cadastrar novo produto
-  Dado que o usuário acessa a página de cadastro de produto
-  Quando o usuário preenche as informações do produto
-  E o usuário clica no botão "Salvar"
-  Então o produto está listado no inventário
-  
-# CT002 - Tentar cadastrar produto com estoque negativo
-#   Dado que o usuário acessa a página de cadastro de produto
-#   Quando o usuário preenche a descrição com "Produto B"
-#   E o usuário preenche a quantidade em estoque com "-10"
-#   E o usuário preenche o valor unitário com "5.00"
-#   E o usuário clica no botão "Cadastrar"
-#   Então o sistema exibe a mensagem "A quantidade em estoque não pode ser negativa"
+    Dado que o usuário acessa a página de cadastro de produto
+    Quando preenche as informações do produto
+    E clica no botão "Salvar"
+    Então o produto está listado no inventário
 
-# CT003 - Editar produto existente
-#   Dado que o produto "Produto A" está listado no inventário
-#   Quando o usuário edita a descrição para "Produto A1"
-#   E o usuário edita a quantidade em estoque para "120"
-#   E o usuário edita o valor unitário para "11.00"
-#   E o usuário clica no botão "Salvar"
-#   Então o sistema exibe a mensagem "Produto atualizado com sucesso"
-#   E o produto "Produto A1" está listado no inventário
+CT003 - Editar produto existente
+    Dado que o usuário acessa a página de inventário
+    E existe um produto cadastrado
+    Quando clica em "Editar"
+    E edita a quantidade em estoque para "120"
+    E clica no botão "Salvar"
+    Então o produto está listado no inventário com o novo estoque
 
-# CT004 - Excluir produto
-#   Dado que o produto "Produto A1" está listado no inventário
-#   Quando o usuário clica no botão "Excluir" ao lado do produto "Produto A1"
-#   E o usuário confirma a exclusão
-#   Então o sistema exibe a mensagem "Produto excluído com sucesso"
-#   E o produto "Produto A1" não está listado no inventário
+CT004 - Excluir produto
+    Dado que o usuário acessa a página de inventário
+    E existe um produto cadastrado
+    Quando clica no botão "Deletar"
+    E confirma a exclusão
+    Então o produto não está listado no inventário
+
+CT005 - Adicionar quantidade ao estoque
+    Dado que o usuário acessa a página de inventário
+    E existe um produto cadastrado
+    Quando clica em "Entrada"
+    E adiciona em estoque "50"  
+    E clica no botão para atualizar
+    Então o produto está listado no inventário com a quantidade atualizada
+
+CT006 - Reduzir quantidade do estoque
+    Dado que o usuário acessa a página de inventário
+    E existe um produto cadastrado
+    Quando clica em "Saida"
+    E diminui em estoque "5"  
+    E clica no botão para atualizar
+    Então o produto está listado no inventário com a quantidade reduzida em 5
+
+CT002 - Tenta atualizar o estoque em valor negativo
+    Dado que o usuário acessa a página de inventário
+    E existe um produto cadastrado
+    Quando clica em "Saida"
+    E diminui em estoque "20"  
+    E clica no botão para atualizar
+    Então o sistema exibe uma mensagem de erro informando que a quantidade não pode ser negativa
