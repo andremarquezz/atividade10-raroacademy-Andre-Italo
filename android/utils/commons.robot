@@ -27,3 +27,13 @@ Aguarda e insere o texto no elemento
     Wait Until Element Is Visible    ${element}
     Clear Text                        ${element}
     Input Text                       ${element}    ${text}
+
+Adiciona produto ao estoque
+    [Arguments]     ${TEXT_DESCRIPTION}  ${TEXT_UNIT}  ${TEXT_QUANTITY}  ${TEXT_PRICE}   ${TEXT_LOTE}
+    Click Element  ${BTN_NEW}
+    Aguarda e insere o texto no elemento                  ${DESCRIPTION}    ${TEXT_DESCRIPTION}
+    Aguarda e insere o texto no elemento                  ${UNIT}           ${TEXT_UNIT}           
+    Aguarda e insere o texto no elemento                  ${QUANTITY}       ${TEXT_QUANTITY}                
+    Aguarda e insere o texto no elemento                  ${PRICE}          ${TEXT_PRICE}      
+    Aguarda e insere o texto no elemento                  ${LOTE}           ${TEXT_LOTE}
+    Click Element                                         ${BTN_SAVE}

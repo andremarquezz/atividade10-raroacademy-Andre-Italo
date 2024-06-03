@@ -56,12 +56,7 @@ Dado que o usuário acessa a página de inventário
     Aguarda e verifica que o elemento esta visivel        ${BTN_NEW}
 
 Quando preenche as informações do produto
-    Aguarda e insere o texto no elemento                  ${CODE}           123
-    Aguarda e insere o texto no elemento                  ${DESCRIPTION}    Produto Teste
-    Aguarda e insere o texto no elemento                  ${UNIT}           UN
-    Aguarda e insere o texto no elemento                  ${QUANTITY}       10               
-    Aguarda e insere o texto no elemento                  ${PRICE}          10.00
-    Aguarda e insere o texto no elemento                  ${LOTE}           123456
+    Adiciona produto ao estoque    RTX 2060    UN    10    10.00    123456
 
 Quando clica em "Editar"
     Aguarda e clica no elemento                           ${BTN_EDIT}
@@ -97,15 +92,7 @@ E preenche a quantidade em estoque com "-10"
   Aguarda e insere o texto no elemento                    ${QUANTITY}       -10
 
 E existe um produto cadastrado
-    Click Element                                         ${BTN_NEW}
-    Wait Until Element Is Visible                         ${TEXT_PRODUCT}
-    Aguarda e insere o texto no elemento                  ${CODE}           123
-    Aguarda e insere o texto no elemento                  ${DESCRIPTION}    Produto Teste
-    Aguarda e insere o texto no elemento                  ${UNIT}           UN
-    Aguarda e insere o texto no elemento                  ${QUANTITY}       10
-    Aguarda e insere o texto no elemento                  ${PRICE}          10.00
-    Aguarda e insere o texto no elemento                  ${LOTE}           123456
-    Click Element                                         ${BTN_SAVE}
+    Adiciona produto ao estoque    RTX 2060    UN    10    10.00    123456
     Wait Until Element Is Visible                         ${TABLE_PRODUCT}
 
 E edita a quantidade em estoque para "120"
@@ -113,8 +100,7 @@ E edita a quantidade em estoque para "120"
 
 Então o produto está listado no inventário
     Aguarda e verifica que o elemento esta visivel                         ${BTN_MENU}
-    Aguarda e verifica que o elemento esta visivel e contem o texto        ${CODE}          123
-    Aguarda e verifica que o elemento esta visivel e contem o texto        ${DESCRIPTION}   Produto Teste
+    Aguarda e verifica que o elemento esta visivel e contem o texto        ${DESCRIPTION}   RTX 2060
     Aguarda e verifica que o elemento esta visivel e contem o texto        ${UNIT}          UN
     Aguarda e verifica que o elemento esta visivel e contem o texto        ${QUANTITY}      10
     Aguarda e verifica que o elemento esta visivel e contem o texto        ${PRICE}         10,00
@@ -122,8 +108,7 @@ Então o produto está listado no inventário
 
 Então o produto está listado no inventário com o novo estoque
     Aguarda e verifica que o elemento esta visivel                         ${BTN_MENU}
-    Aguarda e verifica que o elemento esta visivel e contem o texto        ${CODE}          123
-    Aguarda e verifica que o elemento esta visivel e contem o texto        ${DESCRIPTION}   Produto Teste
+    Aguarda e verifica que o elemento esta visivel e contem o texto        ${DESCRIPTION}   RTX 2060
     Aguarda e verifica que o elemento esta visivel e contem o texto        ${UNIT}          UN
     Aguarda e verifica que o elemento esta visivel e contem o texto        ${QUANTITY}      120                     
     Aguarda e verifica que o elemento esta visivel e contem o texto        ${PRICE}         10,00
@@ -140,8 +125,7 @@ Então o produto não está listado no inventário
 
 Então o produto está listado no inventário com a quantidade atualizada
     Aguarda e verifica que o elemento esta visivel                                            ${BTN_MENU}
-    Aguarda e verifica que o elemento esta visivel e contem o texto                           ${CODE}          123
-    Aguarda e verifica que o elemento esta visivel e contem o texto                           ${DESCRIPTION}   Produto Teste
+    Aguarda e verifica que o elemento esta visivel e contem o texto                           ${DESCRIPTION}   RTX 2060
     Aguarda e verifica que o elemento esta visivel e contem o texto                           ${UNIT}          UN
     Aguarda e verifica que o elemento esta visivel e contem o texto                           ${QUANTITY}      60
     Aguarda e verifica que o elemento esta visivel e contem o texto                           ${PRICE}         10,00
@@ -149,8 +133,7 @@ Então o produto está listado no inventário com a quantidade atualizada
 
 Então o produto está listado no inventário com a quantidade reduzida em 5
     Aguarda e verifica que o elemento esta visivel                                            ${BTN_MENU}
-    Aguarda e verifica que o elemento esta visivel e contem o texto                           ${CODE}          123
-    Aguarda e verifica que o elemento esta visivel e contem o texto                           ${DESCRIPTION}   Produto Teste
+    Aguarda e verifica que o elemento esta visivel e contem o texto                           ${DESCRIPTION}   RTX 2060
     Aguarda e verifica que o elemento esta visivel e contem o texto                           ${UNIT}          UN
     Aguarda e verifica que o elemento esta visivel e contem o texto                           ${QUANTITY}      5
     Aguarda e verifica que o elemento esta visivel e contem o texto                           ${PRICE}         10,00
