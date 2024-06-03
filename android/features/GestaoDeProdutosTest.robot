@@ -12,7 +12,7 @@ CT001 - Cadastrar novo produto
     E clica no botão "Salvar"
     Então o produto está listado no inventário
 
-CT003 - Editar produto existente
+CT002 - Editar produto existente
     Dado que o usuário acessa a página de inventário
     E existe um produto cadastrado
     Quando clica em "Editar"
@@ -20,14 +20,14 @@ CT003 - Editar produto existente
     E clica no botão "Salvar"
     Então o produto está listado no inventário com o novo estoque
 
-CT004 - Excluir produto
+CT003 - Excluir produto
     Dado que o usuário acessa a página de inventário
     E existe um produto cadastrado
     Quando clica no botão "Deletar"
     E confirma a exclusão
     Então o produto não está listado no inventário
 
-CT005 - Adicionar quantidade ao estoque
+CT004 - Adicionar quantidade ao estoque
     Dado que o usuário acessa a página de inventário
     E existe um produto cadastrado
     Quando clica em "Entrada"
@@ -35,7 +35,7 @@ CT005 - Adicionar quantidade ao estoque
     E clica no botão para atualizar
     Então o produto está listado no inventário com a quantidade atualizada
 
-CT006 - Reduzir quantidade do estoque
+CT005 - Reduzir quantidade do estoque
     Dado que o usuário acessa a página de inventário
     E existe um produto cadastrado
     Quando clica em "Saida"
@@ -43,7 +43,7 @@ CT006 - Reduzir quantidade do estoque
     E clica no botão para atualizar
     Então o produto está listado no inventário com a quantidade reduzida em 5
 
-CT002 - Tenta atualizar o estoque em valor negativo
+CT006 - Tenta atualizar o estoque em valor negativo
     Dado que o usuário acessa a página de inventário
     E existe um produto cadastrado
     Quando clica em "Saida"

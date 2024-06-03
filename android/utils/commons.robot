@@ -2,15 +2,28 @@
 
 Resource   ../../base.robot
 
+Library    XML
 
 *** Keywords ***
-Aguardar e Clicar no Elemento
-    [Arguments]    ${locator}
-    Wait Until Element Is Visible    ${locator}
-    Click Element                    ${locator}
 
-Verificar Texto no Atributo Content-Desc do Elemento
-    [Arguments]    ${locator}    ${regex}
-    ${desc}=    Get Element Attribute    ${locator}    content-desc
-    Should Match Regexp    ${desc}    ${regex}
+Aguarda e verifica que o elemento esta visivel
+    [Arguments]    ${element}
+    Wait Until Element Is Visible    ${element}
+    Element Should Be Visible        ${element}
 
+Aguarda e clica no elemento
+    [Arguments]    ${element}
+    Wait Until Element Is Visible    ${element}
+    Click Element                    ${element}
+
+Aguarda e verifica que o elemento esta visivel e contem o texto
+    [Arguments]    ${element}    ${text}
+    Wait Until Element Is Visible    ${element}
+    Element Should Be Visible        ${element}
+    Element Should Contain Text      ${element}    ${text} 
+
+Aguarda e insere o texto no elemento
+    [Arguments]    ${element}    ${text}
+    Wait Until Element Is Visible    ${element}
+    Clear Text                        ${element}
+    Input Text                       ${element}    ${text}
