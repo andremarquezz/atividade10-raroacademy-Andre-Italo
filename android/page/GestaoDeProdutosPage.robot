@@ -56,7 +56,11 @@ Dado que o usuário acessa a página de inventário
     Aguarda e verifica que o elemento esta visivel        ${BTN_NEW}
 
 Quando preenche as informações do produto
-    Adiciona produto ao estoque    RTX 2060    UN    10    10.00    123456
+    Aguarda e insere o texto no elemento                  ${DESCRIPTION}    RTX 2060
+    Aguarda e insere o texto no elemento                  ${UNIT}           UN
+    Aguarda e insere o texto no elemento                  ${QUANTITY}       10               
+    Aguarda e insere o texto no elemento                  ${PRICE}          10.00
+    Aguarda e insere o texto no elemento                  ${LOTE}           123456
 
 Quando clica em "Editar"
     Aguarda e clica no elemento                           ${BTN_EDIT}
