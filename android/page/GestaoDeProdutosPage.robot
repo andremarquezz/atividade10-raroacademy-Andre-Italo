@@ -22,7 +22,7 @@ ${TEXT_UNIT}                     xpath=//android.widget.TextView[@text="Unidade"
 ${TEXT_QUANTITY}                 xpath=//android.widget.TextView[@text="Quantidade"]
 ${TEXT_PRICE}                    xpath=//android.widget.TextView[@text="Val.Unit."]
 ${TEXT_LOTE}                     xpath=//android.widget.TextView[@text="Lote"]
-${ERROR_MESSAGE}                 id=android:id/message
+${ANDROID_MESSAGE}               id=android:id/message
 #INPUT
 ${INPUT_ADD_STOCK}               id=br.com.pztec.estoque:id/txt_qtdentrada
 ${INPUT_REMOVE_STOCK}            id=br.com.pztec.estoque:id/txt_qtdsaida
@@ -144,5 +144,5 @@ Então o produto está listado no inventário com a quantidade reduzida em 5
     Aguarda e verifica que o elemento esta visivel e contem o texto                           ${LOTE}          123456
 
 Então o sistema exibe uma mensagem de erro informando que a quantidade não pode ser negativa
-    Aguarda e verifica que o elemento esta visivel                                            ${ERROR_MESSAGE}
-    Aguarda e verifica que o elemento esta visivel e contem o texto                           ${ERROR_MESSAGE}    Estoque insuficiente
+    Aguarda e verifica que o elemento esta visivel                                            ${ANDROID_MESSAGE}
+    Aguarda e verifica que o elemento esta visivel e contem o texto                           ${ANDROID_MESSAGE}    Estoque insuficiente
