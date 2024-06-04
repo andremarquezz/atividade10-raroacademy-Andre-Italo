@@ -30,7 +30,8 @@ Aguarda e insere o texto no elemento
 
 Adiciona produto ao estoque
     [Arguments]     ${TEXT_DESCRIPTION}  ${TEXT_UNIT}  ${TEXT_QUANTITY}  ${TEXT_PRICE}   ${TEXT_LOTE}
-    Aguarda e clica no elemento                           ${BTN_NEW}
+
+    Aguarda e clica no elemento                          ${BTN_NEW}
     Aguarda e insere o texto no elemento                  ${DESCRIPTION}    ${TEXT_DESCRIPTION}
     Aguarda e insere o texto no elemento                  ${UNIT}           ${TEXT_UNIT}           
     Aguarda e insere o texto no elemento                  ${QUANTITY}       ${TEXT_QUANTITY}                
