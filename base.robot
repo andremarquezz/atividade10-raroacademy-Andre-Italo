@@ -1,6 +1,7 @@
 *** Settings ***
 
 Library      AppiumLibrary
+Library      DateTime
 
 #Utils
 Resource     android/utils/commons.robot

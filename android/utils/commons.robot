@@ -2,9 +2,6 @@
 
 Resource   ../../base.robot
 
-Library    XML
-Library    DateTime
-
 *** Keywords ***
 
 Aguarda e verifica que o elemento esta visivel
@@ -41,12 +38,7 @@ Adiciona produto ao estoque
 
 Adiciona produtos ao estoque
     [Arguments]    @{PRODUCTS}
-    FOR    ${PRODUCT}    IN    @{PRODUCTS}
-        ${TEXT_DESCRIPTION}=   Set Variable    ${PRODUCT}[0]
-        ${TEXT_UNIT}=          Set Variable    ${PRODUCT}[1]
-        ${TEXT_QUANTITY}=      Set Variable    ${PRODUCT}[2]
-        ${TEXT_PRICE}=         Set Variable    ${PRODUCT}[3]
-        ${TEXT_LOTE}=          Set Variable    ${PRODUCT}[4]
+    FOR    ${TEXT_DESCRIPTION}    ${TEXT_UNIT}    ${TEXT_QUANTITY}    ${TEXT_PRICE}    ${TEXT_LOTE}    IN    @{PRODUCTS}
         Adiciona produto ao estoque    ${TEXT_DESCRIPTION}    ${TEXT_UNIT}    ${TEXT_QUANTITY}    ${TEXT_PRICE}    ${TEXT_LOTE}
     END
 
