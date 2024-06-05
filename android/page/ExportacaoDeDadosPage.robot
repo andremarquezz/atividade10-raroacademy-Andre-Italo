@@ -25,6 +25,7 @@ ${GROUP_MENU}                       id=br.com.pztec.estoque:id/btn_grupo
 ${ADD_GROUP}                        id=br.com.pztec.estoque:id/addgrupo
 ${TXT_GROUP}                        id=br.com.pztec.estoque:id/txt_descricao
 ${SAVE_GROUP}                       id=br.com.pztec.estoque:id/btn_salvar
+${ERROR_PDF}         xpath=//android.widget.Toast[@text="O arquivo PDF ainda não foi gerado!"]
 
 *** Keywords ***
 
@@ -164,9 +165,8 @@ E apenas o aquivo de grupos.csv com a data de exportação são retornados na li
     Aguarda e verifica que o elemento esta visivel e contem o texto    ${DATE_TEXT_ENTRADA}     O arquivo PDF ainda não foi gerado!
     Aguarda e verifica que o elemento esta visivel e contem o texto    ${DATE_TEXT_GRUP}        grupos.csv 
 
-# Então deve receber a mensagem de que o PDF não foi gerado
-    # ${toast_text}=    Wait Until Element Is Visible    xpath=//android.widget.Toast    timeout=10s
-    # Should Contain    ${toast_text}    O arquivo PDF ainda não foi gerado!
+Então deve receber a mensagem de que o PDF não foi gerado
+    Page Should Contain Element    ${ERROR_PDF}
 
 Então deve visualizar as opções para exportar o relatorio 
     Aguarda e verifica que o elemento esta visivel    ${TEXT_PRODUCT_CSV}  
