@@ -45,7 +45,7 @@ CT006 - Acessar area de exportar e selecionar opção de compartilhar um arquivo
    Dado que o usuario acessa o menu do aplicativo
    Quando o usuário acessa a página de exportação 
    E seleciona o botão de enviar um arquivo que ainda não foi gerado
-   # Então deve receber a mensagem de que o PDF não foi gerado
+   Então deve receber a mensagem de que o PDF não foi gerado
 
 CT007 - Realizar exportação sem registros de novos produtos, entrada ou saida
    Dado que o usuario acessa o menu do aplicativo
