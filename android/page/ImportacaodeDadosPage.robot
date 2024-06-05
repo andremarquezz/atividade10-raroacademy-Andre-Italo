@@ -23,7 +23,6 @@ ${DESC_GROUP}                id=br.com.pztec.estoque:id/descricao
 *** Keywords ***
 
 Quando o usuário acessa a página de importação
-    Aguarda e clica no elemento    ${BTN_MENU}
     Aguarda e clica no elemento    ${BTN_IMPORT}
 
 E seleciona a opção de restaurar produtos
