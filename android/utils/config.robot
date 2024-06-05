@@ -7,7 +7,7 @@ Resource     ../../base.robot
 
 ${ANDROID_AUTOMATION_NAME}      UIAutomator2
 ${ANDROID_PLATFORM_NAME}        Android
-${ANDROID_PLATFORM_VERSION}     11
+${ANDROID_PLATFORM_VERSION}     12
 ${ANDROID_APP_PACKAGE}          br.com.pztec.estoque
 ${ANDROID_APP_ACTIVITY}         .Inicio
 ${AUTO_GRANT_PERMISSIONS}       true
