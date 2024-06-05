@@ -2,7 +2,6 @@
 
 Resource    ../../base.robot
 
-
 *** Variables ***
 ${BTN_MENU_BACKUP}         id=br.com.pztec.estoque:id/btn_backup
 ${BTN_GENERATE_BACKUP}     id=br.com.pztec.estoque:id/btn_gerar
@@ -14,9 +13,9 @@ ${BACKUP_ONE}              xpath=//android.widget.TextView[@resource-id="android
 
 ${BTN_CONFIRM}             id=android:id/button1
 
-@{PRODUCTS}    [Product1, UN, 10, 10.5, LOT1]
-...            [Product2, UN, 20, 20.5, LOT2]
-...            [Product3, UN, 30, 30.5, LOT3]
+@{PRODUCTS}    Product1     UN     10     10.5     LOT1   
+...            Product2     UN     20     20.5     LOT2   
+...            Product3     UN     30     30.5     LOT3
 
 *** Keywords ***
 
