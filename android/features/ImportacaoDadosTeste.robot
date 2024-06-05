@@ -8,8 +8,7 @@ Test Teardown    Teardown
 *** Test Cases ***
 
 CT001 - Acessar area de importar dados com sucesso 
-    Dado que o usuario acessa o menu do aplicativo
-    Quando o usuário acessa a página de importação 
+    Dado que o usuário acessa a página de importação 
     Então deve visualizar as opções para importar um relatorio 
 
 CT002 - Realizar importação dos dados de um produto 
