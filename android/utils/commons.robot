@@ -63,3 +63,12 @@ Acessa e formata data atual
 
 Selecionar na barra do celular a opção de voltar
     Press Keycode    4
+
+Selecionar arquivo e importar 
+    [Arguments]    ${element}
+    Swipe By Percent   10    90    80    10    1000
+    Aguarda e clica no elemento                                        ${SELECT_CSV} 
+    Aguarda e clica no elemento                                        ${element}
+    Aguarda e clica no elemento                                        ${MODAL_OK} 
+    Aguarda e verifica que o elemento esta visivel e contem o texto    ${MESSAGE_MODAL}     1 registros inseridos.
+    Aguarda e clica no elemento                                        ${MODAL_OK} 

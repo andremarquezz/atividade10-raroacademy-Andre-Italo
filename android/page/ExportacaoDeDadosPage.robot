@@ -15,12 +15,16 @@ ${DATE_TEXT_EXPORT}                 id=br.com.pztec.estoque:id/datafileprod
 ${MODAL_OK}                         id=android:id/button1
 ${DATE_TEXT_ENTRADA}                id=br.com.pztec.estoque:id/datafileent
 ${DATE_TEXT_SAIDA}                  id=br.com.pztec.estoque:id/datafilesai
-${DATE_TEXT_GRUP}                  id=br.com.pztec.estoque:id/datafilegrupo
+${DATE_TEXT_GRUP}                   id=br.com.pztec.estoque:id/datafilegrupo
 ${SEND_GROUPS}                      id=br.com.pztec.estoque:id/btn_grupo
 ${SHARE}                            xpath=//android.widget.ScrollView[@resource-id="android:id/contentPanel"]/android.widget.ScrollView
 ${SHARE_HEADER}                     id=android:id/chooser_header
 ${SHARE_SAID}                       id=br.com.pztec.estoque:id/btn_ent
 ${TOAST_SHARE}                      id=xpath=//android.widget.Toast[@text="O arquivo PDF ainda não foi gerado!"]
+${GROUP_MENU}                       id=br.com.pztec.estoque:id/btn_grupo
+${ADD_GROUP}                        id=br.com.pztec.estoque:id/addgrupo
+${TXT_GROUP}                        id=br.com.pztec.estoque:id/txt_descricao
+${SAVE_GROUP}                       id=br.com.pztec.estoque:id/btn_salvar
 
 *** Keywords ***
 
@@ -43,6 +47,41 @@ Dado que o usuario realize a exportação de produtos
     Selecionar na barra do celular a opção de voltar
     Selecionar na barra do celular a opção de voltar
 
+Dado que o usuario realize a exportação de um grupo 
+    Aguarda e clica no elemento                                        ${BTN_MENU}
+    Aguarda e clica no elemento                                        ${BTN_EXPORT}
+    Aguarda e clica no elemento                                        ${BTN_GENERATE}
+    Aguarda e clica no elemento                                        ${MODAL_OK}  
+    Aguarda e verifica que o elemento esta visivel e contem o texto    ${DATE_TEXT_GRUP}    grupos.csv
+
+Dado que o usuario realize a exportação de entradas
+    Adiciona produto ao estoque    Produto Teste    UN    10     10.00    123456
+    Wait Until Element Is Visible                                      ${TABLE_PRODUCT}
+    Aguarda e clica no elemento                                        ${BTN_ADD_STOCK}   
+    Aguarda e insere o texto no elemento                               ${INPUT_ADD_STOCK}    50          
+    Aguarda e clica no elemento                                        ${BTN_UPDATE}
+    Aguarda e clica no elemento                                        ${BTN_MENU}
+    Aguarda e clica no elemento                                        ${BTN_EXPORT}
+    Aguarda e clica no elemento                                        ${BTN_GENERATE}
+    Aguarda e clica no elemento                                        ${MODAL_OK}  
+    Aguarda e verifica que o elemento esta visivel e contem o texto    ${DATE_TEXT_ENTRADA}    entradas.csv
+    Selecionar na barra do celular a opção de voltar
+    Selecionar na barra do celular a opção de voltar
+
+Dado que o usuario realize a exportação de saidas 
+    Adiciona produto ao estoque    Produto Teste    UN    10     10.00    123456
+    Wait Until Element Is Visible                                      ${TABLE_PRODUCT}
+    Aguarda e clica no elemento                                        ${BTN_REMOVE_STOCK}
+    Aguarda e insere o texto no elemento                               ${INPUT_REMOVE_STOCK}    5
+    Aguarda e clica no elemento                                        ${BTN_UPDATE}
+    Aguarda e clica no elemento                                        ${BTN_MENU}
+    Aguarda e clica no elemento                                        ${BTN_EXPORT}
+    Aguarda e clica no elemento                                        ${BTN_GENERATE}
+    Aguarda e clica no elemento                                        ${MODAL_OK}  
+    Aguarda e verifica que o elemento esta visivel e contem o texto    ${DATE_TEXT_SAIDA}    saidas.csv
+    Selecionar na barra do celular a opção de voltar
+    Selecionar na barra do celular a opção de voltar
+
 Dado que existem registros de produtos no sistema
     Adiciona produto ao estoque    Produto Teste    UN    10     10.00    123456
 
@@ -56,7 +95,6 @@ Dado que existem registros de entrada no sistema
 
 Dado que existem registros de saida no sistema 
     Adiciona produto ao estoque    Produto Teste    UN    10     10.00    123456
-    Wait Until Element Is Visible                         ${TABLE_PRODUCT}
     Wait Until Element Is Visible                         ${TABLE_PRODUCT}
     Aguarda e clica no elemento                           ${BTN_REMOVE_STOCK}
     Aguarda e insere o texto no elemento                  ${INPUT_REMOVE_STOCK}    5
@@ -73,6 +111,15 @@ Quando o usuário acessa a página de exportação de dados
 
 Quando fechar o pop-up de sucesso
     Aguarda e clica no elemento    ${MODAL_OK} 
+
+E insira um novo grupo de produtos 
+    Selecionar na barra do celular a opção de voltar
+    Aguarda e clica no elemento                                                 ${GROUP_MENU}
+    Aguarda e clica no elemento                                                 ${ADD_GROUP}
+    Aguarda e insere o texto no elemento                                        ${TXT_GROUP}    grupo4002
+    Aguarda e clica no elemento                                                 ${SAVE_GROUP}    
+    Selecionar na barra do celular a opção de voltar 
+    Selecionar na barra do celular a opção de voltar
 
 E exclua o produto exportado
     Aguarda e clica no elemento                           ${BTN_DELETE}
