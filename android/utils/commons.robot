@@ -60,3 +60,6 @@ Aguarda e verifica data da exportação
 
 Acessa e formata data atual
     Run Keyword And Return    Get Current Date    result_format=%d/%m/%Y
+
+Selecionar na barra do celular a opção de voltar
+    Press Keycode    4

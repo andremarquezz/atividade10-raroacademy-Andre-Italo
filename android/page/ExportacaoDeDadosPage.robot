@@ -33,6 +33,16 @@ Dado que o usuario acessa o menu do aplicativo
     Aguarda e clica no elemento    ${BTN_MENU}
     Aguarda e verifica que o elemento esta visivel    ${BTN_EXPORT}
 
+Dado que o usuario realize a exportação de produtos 
+    Adiciona produto ao estoque    Produto Teste    UN    10     10.00    123456
+    Aguarda e clica no elemento                                        ${BTN_MENU}
+    Aguarda e clica no elemento                                        ${BTN_EXPORT}
+    Aguarda e clica no elemento                                        ${BTN_GENERATE}
+    Aguarda e clica no elemento                                        ${MODAL_OK}  
+    Aguarda e verifica que o elemento esta visivel e contem o texto    ${DATE_TEXT_EXPORT}    produtos.csv
+    Selecionar na barra do celular a opção de voltar
+    Selecionar na barra do celular a opção de voltar
+
 Dado que existem registros de produtos no sistema
     Adiciona produto ao estoque    Produto Teste    UN    10     10.00    123456
 
@@ -63,6 +73,17 @@ Quando o usuário acessa a página de exportação de dados
 
 Quando fechar o pop-up de sucesso
     Aguarda e clica no elemento    ${MODAL_OK} 
+
+E exclua o produto exportado
+    Aguarda e clica no elemento                           ${BTN_DELETE}
+    Aguarda e clica no elemento                           ${MODAL_OK}   
+    Aguarda e verifica que o elemento esta visivel        ${BTN_MENU}
+    Page Should Not Contain Element                       ${CODE}
+    Page Should Not Contain Element                       ${DESCRIPTION}
+    Page Should Not Contain Element                       ${UNIT}
+    Page Should Not Contain Element                       ${QUANTITY}
+    Page Should Not Contain Element                       ${PRICE}
+    Page Should Not Contain Element                       ${LOTE}
 
 E o usuário clica no botão "Exportar"
     Aguarda e clica no elemento    ${BTN_GENERATE}
