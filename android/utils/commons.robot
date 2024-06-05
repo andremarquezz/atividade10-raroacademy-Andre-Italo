@@ -3,6 +3,7 @@
 Resource   ../../base.robot
 
 Library    XML
+Library    DateTime
 
 *** Keywords ***
 
@@ -48,3 +49,17 @@ Adiciona produtos ao estoque
         ${TEXT_LOTE}=          Set Variable    ${PRODUCT}[4]
         Adiciona produto ao estoque    ${TEXT_DESCRIPTION}    ${TEXT_UNIT}    ${TEXT_QUANTITY}    ${TEXT_PRICE}    ${TEXT_LOTE}
     END
+
+Seleciona elemento e formata para data atual 
+    Run Keyword And Return    Get Current Date    result_format=%d/%m/%Y
+
+Aguarda e verifica data da exportação
+    [Arguments]    ${element}
+    ${day}=    Seleciona elemento e formata para data atual 
+    Element Should Contain Text    ${element}    ${day}
+
+Acessa e formata data atual
+    Run Keyword And Return    Get Current Date    result_format=%d/%m/%Y
+
+Selecionar na barra do celular a opção de voltar
+    Press Keycode    4
