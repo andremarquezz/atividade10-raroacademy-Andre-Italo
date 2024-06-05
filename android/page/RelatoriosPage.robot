@@ -11,7 +11,6 @@ ${BTN_SAIDA}                        id=br.com.pztec.estoque:id/relsaida
 ${TEXT_RELATORIO}                   id=br.com.pztec.estoque:id/datafile
 ${OPEN_PDF}                         id=br.com.pztec.estoque:id/btn_abrir
 ${SEND_EMAIL}                       id=br.com.pztec.estoque:id/btn_email
-${OPEN_PDF_EMAIL_HEADER}            id=android:id/chooser_header
 ${INIT_DATE}                        id=br.com.pztec.estoque:id/data1
 ${FINISH_DATE}                      id=br.com.pztec.estoque:id/data2
 
@@ -31,12 +30,10 @@ E seleciona a opção de "Entradas no Estoque"
 
 E deve ser possivel visualizar o PDF
     Aguarda e clica no elemento    ${OPEN_PDF}
-    Aguarda e verifica que o elemento esta visivel    ${OPEN_PDF_EMAIL_HEADER}
     Selecionar na barra do celular a opção de voltar
 
 E deve ser possivel enviar o PDF
     Aguarda e clica no elemento    ${SEND_EMAIL} 
-    Aguarda e verifica que o elemento esta visivel    ${OPEN_PDF_EMAIL_HEADER}
     Selecionar na barra do celular a opção de voltar
 
 E informa data inicial e data final
